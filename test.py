@@ -3,8 +3,8 @@ import cv2
 from keras.models import load_model
 import numpy as np
 # loading files
-haar_file="/content/FaceEmotion_ID/haarcascade_files/haarcascade_frontalface_default.xml"
-emotion_model='/content/FaceEmotion_ID/models/_mini_XCEPTION.102-0.66.hdf5'
+haar_file="models/haarcascade_frontalface_default.xml"
+emotion_model='models/_mini_XCEPTION.102-0.66.hdf5'
 
 cascade=cv2.CascadeClassifier(haar_file)
 emotion_classifier=load_model(emotion_model,compile=True)
