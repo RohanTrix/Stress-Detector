@@ -11,7 +11,7 @@ emotion_classifier=load_model(emotion_model,compile=True)
 emotion_names=["angry","disgust","scared", "happy", "sad", "surprised",
  "neutral"]
 
-frame=cv2.imread('images/img2.jpeg')
+frame=cv2.imread('images/img1.jpeg')
 gray_frame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 faces=cascade.detectMultiScale(gray_frame,1.5,5)
 text=[]
