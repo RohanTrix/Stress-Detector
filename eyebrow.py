@@ -1,5 +1,4 @@
 from scipy.spatial import distance as dist
-from imutils.video import VideoStream
 from imutils import face_utils
 import numpy as np
 import imutils
@@ -44,8 +43,8 @@ def normalize_values(points,disp):
         return stress_value,"low_stress"
     
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-emotion_classifier = load_model("_mini_XCEPTION.102-0.66.hdf5", compile=False)
+predictor = dlib.shape_predictor("models/shape_predictor_68_face_landmarks.dat")
+emotion_classifier = load_model("models/_mini_XCEPTION.102-0.66.hdf5", compile=False)
 cap = cv2.VideoCapture(0)
 points = []
 while(True):
@@ -89,4 +88,4 @@ cv2.destroyAllWindows()
 cap.release()
 plt.plot(range(len(points)),points,'ro')
 plt.title("Stress Levels")
-plt.show()
+plt.imwrite()
