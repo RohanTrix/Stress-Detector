@@ -147,3 +147,9 @@ E1E6E1
     align-items: center;
     justify-content: center;
 }
+
+#videoElement {
+	width: 40em;
+	height: 30em;
+	background-color: #666;
+}

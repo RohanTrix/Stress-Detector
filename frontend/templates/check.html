@@ -42,7 +42,12 @@
 
     <section id="home-section">
         <div class="container">
-            <div>Here video frame will come</div>
+            <div>
+                <center>
+                    <video autoplay="true" id="videoElement">
+                    </video>
+                </center>
+            </div>
         </div>
     </section>
 
@@ -79,6 +84,20 @@
     </footer>
 
 </body>
+
+<script>
+    var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+                console.log("Something went wrong!");
+            });
+    }
+</script>
 
 <script src="https://use.fontawesome.com/releases/v5.13.1/js/all.js" data-auto-replace-svg="nest"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
