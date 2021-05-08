@@ -44,7 +44,8 @@
         <div class="container">
             <div>
                 <center>
-                    <video autoplay="true" id="videoElement">
+<!--                     <video autoplay="true" id="videoElement"> -->
+                        <img src="{{ url_for('video_feed') }}" width="800px" height="400px">
                     </video>
                 </center>
             </div>
@@ -85,7 +86,7 @@
 
 </body>
 
-<script>
+<!-- <script>
     var video = document.querySelector("#videoElement");
 
     if (navigator.mediaDevices.getUserMedia) {
@@ -97,7 +98,7 @@
                 console.log("Something went wrong!");
             });
     }
-</script>
+</script> -->
 
 <script src="https://use.fontawesome.com/releases/v5.13.1/js/all.js" data-auto-replace-svg="nest"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
