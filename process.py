@@ -39,10 +39,8 @@ def emotion_finder(faces,frame):
 def normalize_values(points,disp):
     normalized_value = abs(disp - np.min(points))/abs(np.max(points) - np.min(points))
     stress_value = np.exp(-(normalized_value))
-    if stress_value>=65:
-        return stress_value,"High Stress"
-    else:
-        return stress_value,"low_stress"
+    return stress_value
+
 
 
 detector = dlib.get_frontal_face_detector()
@@ -85,7 +83,7 @@ while(True):
         cv2.drawContours(frame, [leyebrowhull], -1, (0, 255, 0), 1)
 
         distq = eye_brow_distance(leyebrow[-1],reyebrow[0])
-        stress_value,stress_label = normalize_values(points,distq)
+        stress_value = normalize_values(points,distq)
         print(stress_value)
         #if stress_value!=1.0: stress_list.append(stress_list)
         if math.isnan(stress_value):
