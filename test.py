@@ -1,10 +1,41 @@
 from keras.preprocessing.image import img_to_array
 import cv2
+from flask import Flask, render_template, Response
 from keras.models import load_model
 import numpy as np
 # loading files
 haar_file="models/haarcascade_frontalface_default.xml"
 emotion_model='models/trained_model.hdf5'
+
+# Code inserted for File Upload and Analysis
+
+app = Flask(__name__)
+
+@app.route('/img_upload')
+def index():
+    """Video streaming home page."""
+    return render_template('uploadImage.html')
+
+@app.route('/img_analysis')
+def ind():
+    """Video streaming home page."""
+    return render_template('checkImage.html')
+
+def gen():
+    """Video streaming generator function."""
+
+    img = cv2.imread("road.jpg")
+    img = cv2.resize(img, (0,0), fx=0.5, fy=0.5) 
+    frame = cv2.imencode('.jpg', img)[1].tobytes()
+    yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+@app.route('/video_feed')
+def video_feed():
+    """Video streaming route. Put this in the src attribute of an img tag."""
+    return Response(gen(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# Above code is inserted for File Upload and Analysis
 
 cascade=cv2.CascadeClassifier(haar_file)
 emotion_classifier=load_model(emotion_model,compile=True)
@@ -32,3 +63,7 @@ for (x,y,w,h) in faces:
     cv2.putText(frame,label,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,255,0),2)
     cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
 cv2.imwrite('results/res1.jpg', frame)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
