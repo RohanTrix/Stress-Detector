@@ -4,7 +4,7 @@ from keras.models import load_model
 import numpy as np
 # loading files
 haar_file="models/haarcascade_frontalface_default.xml"
-emotion_model='models/_mini_XCEPTION.102-0.66.hdf5'
+emotion_model='models/trained_model.hdf5'
 
 cascade=cv2.CascadeClassifier(haar_file)
 emotion_classifier=load_model(emotion_model,compile=True)
