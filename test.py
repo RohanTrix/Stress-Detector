@@ -24,7 +24,7 @@ def ind():
 def gen():
     """Video streaming generator function."""
 
-    img = cv2.imread("road.jpg")
+    img = cv2.imread("images/img1.jpeg")
     img = cv2.resize(img, (0,0), fx=0.5, fy=0.5) 
     frame = cv2.imencode('.jpg', img)[1].tobytes()
     yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
