@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+
+    <title>Welcome to Stress Detector!</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a style="font-size: 33px; color:white; font-family: 'Berkshire Swash', cursive;" href="index.html">Stress
+            Detector</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto mr-5">
+                <a class="nav-item nav-link active ml-2" href="#home-section"
+                    style="font-weight: 500; color: #E1E6E1; font-family:'Poppins', sans-serif;">PROBLEM EARLIER<span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ml-2" href="#problemEarly"
+                    style="font-weight: 500; color: #E1E6E1; font-family:'Poppins', sans-serif;">BUT NOW</a>
+                <a class="nav-item nav-link ml-2" href="/fillinsidetarama"
+                    style="font-weight: 500; color: #000; font-family:'Poppins', sans-serif;">START</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+
+    <section id="home-section">
+        <div class="container">
+            <div>
+                <center>
+                    <img src="{{ url_for('image_feed') }}" width="400px" height="400px">
+                    </video>
+                </center>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <section id="footer-section">
+            <div class="container" style="text-align: justify;">
+                <center>
+                    <div class="row">
+                        <div class="col-sm mt-3 mb-1">
+                            <a style="color: #FFF;" href="#home-section">Back to top <i class="fas fa-arrow-up"></i></a>
+                        </div>
+
+                        <div class="col-sm mt-3 mb-1">
+                            Made with <span style="color: red;">&hearts;</span> by <a style="color: #FFF;"
+                                href="https://github.com/dhairyaostwal">Dhairya Ostwal</a>
+                        </div>
+                        <div class="col-sm mt-2 mb-1">
+                            <a style="font-size: 30px; color: #FFF;" class="fab fa-github icon-size mr-3 githubIcon"
+                                href="https://github.com/dhairyaostwal" height="20px" width="20px"></a>
+                            <a style="font-size: 30px; color: #FFF;" class="fab fa-linkedin icon-size mr-3 linkedinIcon"
+                                href="https://www.linkedin.com/in/dhairyaostwal/" height="20px" width="20px"></a>
+                            <a style="font-size: 30px; color: #FFF;" class="fab fa-instagram icon-size mr-3 instaIcon"
+                                href="https://instagram.com/dhairyaostwal/" height="20px" width="20px"></a>
+                            <a style="font-size: 30px; color: #FFF;" class="fab fa-twitter icon-size mr-3 twitterIcon"
+                                href="https://twitter.com/dhairyaostwal/" height="20px" width="20px"></a>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </section>
+    </footer>
+
+</body>
+
+<script src="https://use.fontawesome.com/releases/v5.13.1/js/all.js" data-auto-replace-svg="nest"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
