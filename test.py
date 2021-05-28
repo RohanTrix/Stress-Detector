@@ -15,21 +15,22 @@ frame=cv2.imread('images/img2.jpg')
 gray_frame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 faces=cascade.detectMultiScale(gray_frame,1.5,5)
 text=[]
+
 for (x,y,w,h) in faces:
     roi=gray_frame[y:y+h,x:x+w]
-    roi=cv2.resize(roi,(64,64))
-    roi=roi.astype("float")/255.0
+    roi=cv2.resize(roi,(64,64)) # Resizing for input layer of CNN
+    roi=roi.astype("float")/255.0 # Normalisation of image
     roi=img_to_array(roi)
     roi=np.expand_dims(roi,axis=0)
-    
+    import os
+    os.system('clear')
     predicted_emotion=emotion_classifier.predict(roi)[0]
     probab=np.max(predicted_emotion)
     label=emotion_names[predicted_emotion.argmax()]
     percen=predicted_emotion*100
     for j in range(7):
         text.append(emotion_names[j]+" : "+str(percen[j]))
-    import os
-    os.system('clear')
+    
     for i in range(7):    
         cv2.putText(frame,text[i],(5,i*30+15),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,255),2)
         print(text[i])
