@@ -44,7 +44,7 @@ def gen():
         frame = cv2.imencode('.jpg', frame)[1].tobytes()
         yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
         import time
-        time.sleep(0.1)
+        time.sleep(0.05)
     
 
 @app.route('/video_feed')
